@@ -1,0 +1,22 @@
+@import 'materialize';
+@import 'material_icons';
+
+body {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+}
+
+footer{
+	flex: 1 0 auto;
+}
+
+.footer-copyright{
+	padding: 0 !important;
+}
+
+.icon-block{
+	.material-icons{
+		font-size: inherit;
+	}
+}

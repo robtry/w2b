@@ -1,0 +1,2 @@
+#=> descomentar favicon.ico
+#=> escriber GEO

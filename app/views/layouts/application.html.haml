@@ -1,0 +1,23 @@
+!!!5
+%html{lang: "es"}
+	%head
+		%meta{name:"viewport", content:"width=device-width, initial-scale=1"}
+		%meta{charset:"UTF-8"}
+		-#= favicon_link_tag 'favicon.ico'
+		= csrf_meta_tags		
+		= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track': 'reload'
+		= javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+		%title What2Bring
+%body
+	%nav.light-blue.lighten-1.navbar-fixed{:role=>"navigation"}
+		%div.nav-wrapper.container
+			%a.brand-logo#logo-container{:href => "#"} What2Bring
+			%ul.right.hide-on-med-and-down
+				%li
+					%a{:href => "#"} Hola
+			%ul#nav-mobile.side-nav
+				%li
+					%a{:href => "#"} navbar link
+			%a.button-collapse{:href => "#",:data=>{:activates=>"nav-mobile"}}
+				%i.material-icons menu
+	=yield
