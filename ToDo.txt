@@ -1,2 +1,3 @@
 #=> descomentar favicon.ico
 #=> escriber GEO
+#=> cambiar el btn fixed

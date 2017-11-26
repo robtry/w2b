@@ -4,7 +4,14 @@
 		%br/
 		%h1.header.center.orange-text What 2 Bring
 		.row.center
-			%h5.header.col.s12.light Una forma diferente de organizar
+			%ul
+				%li 
+					%h5 1) Crear evento
+				%li
+					%h5 2) Agregar items
+				%li
+					%h5 3) Comparte el enlace
+			%h4.header.col.s12.light Una forma diferente de organizar
 		.row.center
 			%a.btn-large.waves-effect.waves-light.orange{:href => "#"} Crear evento
 		%br/
@@ -15,21 +22,26 @@
 			.col.s12.m4
 				.icon-block
 					%h2.center.light-blue-text
-						%i.material-icons flash_on
-					%h5.center Speeds up development
-					%p.light We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.
+						%i.material-icons event_note
+					%h5.center Organización más efectiva
+					%p.light La intensión de w2b es fungir como soporte para tener un mejor <b> control </b> sobre la organización de las lista de materiales en un evento.
 			.col.s12.m4
 				.icon-block
 					%h2.center.light-blue-text
-						%i.material-icons group
-					%h5.center User Experience Focused
-					%p.light By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.
+						%i.material-icons star_border
+					%h5.center Fácil de usar
+					%p.light Es muy intuitiva, basta con crear un evento y compartir en enlace con las personas que necesites.
 			.col.s12.m4
 				.icon-block
 					%h2.center.light-blue-text
-						%i.material-icons settings
-					%h5.center Easy to work with</h5>
-					%p.light We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.
+						%i.material-icons important_devices
+					%h5.center Máxima compatibilidad
+					%p.light El diseño fue una de nuestras prioridades al diseñar este sitio. Se adapta, <b>evoluciona</b>, para que accedas cómodamente desde el dispositivo que quieras.
+	%br/
+	%br/
+.section#start
+	.container
+		.row.center
 	%br/
 	%br/
 	%br/
@@ -37,7 +49,8 @@
 	.container
 		.row
 			.col.l6.s12
-				%h5 haber
+				%h5 What 2 Bring
+				%p.grey-text.text-lighten-4 Proyecto semestral  Agosto - Diciembre 2017
 	.footer-copyright
 		.container
-			%p.right boton
+			%a.right.waves-effect.waves-light.btn{:href => "https://github.com/robtry/w2b"} GITHUB
