@@ -15,9 +15,18 @@
 				=link_to("W2B", root_path, :class=>"brand-logo")
 				%ul.right.hide-on-med-and-down
 					%li
-						%a{:href => "#"} 
-							%i.material-icons add Nuevo evento
+						-#=link_to("Nuevo evento <i class=\"material-icons right\"> add </i>".html_safe,new_event_path)
+						%a.modal-trigger{:href => "#modal1"} Nuevo evento <i class="material-icons right"> add </i>
+
 	.fixed-action-btn
-		%a.btn-floating.btn-large.waves-effect.waves-light.red{:href => "#"}
-			%i.material-icons add
+		%a.btn-floating.btn-large.red.modal-trigger{:href => "#modal1"}
+			%i.large.material-icons add
+		-#=link_to("<i class=\"material-icons right\"> add </i>".html_safe,new_event_path, :class=>" btn-floating btn-large waves-effect waves-light red")
+	#modal1.modal
+		.modal-content
+			%h4 Nuevo Evento
+			=@event = Event.new
+			= render 'events/form'
+		.modal-footer
+			%a.modal-action.modal-close.waves-effect.waves-green.btn-flat CERRAR
 	=yield

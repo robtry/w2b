@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  numero: MyString
+  descripcion: MyString
+  event: one
+  assignment: one
+
+two:
+  numero: MyString
+  descripcion: MyString
+  event: two
+  assignment: two

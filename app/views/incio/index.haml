@@ -13,7 +13,8 @@
 					%h5 3) Comparte el enlace
 			%h4.header.col.s12.light Una forma diferente de organizar
 		.row.center
-			%a.btn-large.waves-effect.waves-light.orange{:href => "#"} Crear evento
+			-#=link_to("Crear evento",new_event_path,:class=>"btn-large waves-effect waves-light orange")
+			%a.btn-large.waves-effect.waves-light.orange.modal-trigger{:href => "#modal1"} Crear evento
 		%br/
 		%br/
 .container
@@ -51,6 +52,7 @@
 			.col.l6.s12
 				%h5 What 2 Bring
 				%p.grey-text.text-lighten-4 Proyecto semestral  Agosto - Diciembre 2017
+				%p.grey-text.text-lighten-4 ITESM CSF - Introducción a la ingeniería en tecnologías computacionales
 	.footer-copyright
 		.container
 			%a.right.waves-effect.waves-light.btn{:href => "https://github.com/robtry/w2b"} GITHUB

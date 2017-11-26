@@ -1,0 +1,14 @@
+%p#notice= notice
+%p
+	%b Nombre:
+	= @event.nombre
+%p
+	%b Descripcion:
+	= @event.descripcion
+%p
+	%b Agregar items:
+	=render "items/form"
+%ul
+	-@event.items.reverse.each do |i| 
+		%li 
+			=i.descripcion

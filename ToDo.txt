@@ -1,3 +1,7 @@
 #=> descomentar favicon.ico
 #=> escriber GEO
 #=> cambiar el btn fixed
+#########################
+rails g scaffold Event nombre descripcion:text item:references
+rails g scaffold Item numero descripcion event:references assignment:references
+rails g scaffold Assignment usuario item:references
