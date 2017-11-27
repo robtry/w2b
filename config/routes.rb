@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :events, only: [:new,:show,:index,:create] do 
+  resources :events, only: [:show,:index,:create] do 
    resources :assignments
    resources :items, only: [:create]
   end

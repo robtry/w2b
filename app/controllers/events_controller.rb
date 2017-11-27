@@ -5,10 +5,6 @@ class EventsController < ApplicationController
     redirect_to root_path
   end
 
-  def new
-    redirect_to root_path
-  end
-
   def show
     @item = Item.new
   end
@@ -20,9 +16,10 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       if @event.save
-        format.html { redirect_to @event, notice: 'Event was successfully created.' }
+        format.html { redirect_to @event, notice: 'Evento creado satisfactoriamente' }
       else
-        format.html { render :new }        
+        flash[:error] = 'No se pudo crear el evento'
+        format.html {redirect_to root_path}
       end
     end
   end

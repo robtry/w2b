@@ -1,3 +1,4 @@
 class Event < ApplicationRecord
-  has_many :items
+	validates :nombre, presence: {message: "Campo obligatorio."}
+	has_many :items
 end
