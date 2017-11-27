@@ -4,6 +4,14 @@
 .fixed-action-btn
 	%a.btn-floating.btn-large.red.modal-trigger.tooltipped{:href => "#modal1", :data=>{:position=>"top", :delay=>"50", :tooltip=>"Crear nuevo evento"}}
 		%i.large.material-icons add
+#modal3.modal.bottom-sheet
+	.modal-content
+		%h4.truncate ¿Esta seguro que desea agregar item?
+		%ul
+			%li *No va a poder editar este item posteriormente
+			%li *No va a poder eliminar este item
+	.modal-footer
+		%a.modal-action.modal-close.waves-effect.waves-green.btn-flat REGRESAR
 .container
 	.row
 		%br/
@@ -21,7 +29,7 @@
 			%br/
 			%strong Progreso #{u}%:
 			%br
-			%a.waves-effect.waves-light.btn.modal-trigger{:href => "#modal3"} historial
+			%a.modal-trigger{:href => "#modal3"}  Ver historial
 			.progress
 				-if u == 0
 					"<div class="indeterminate"></div>"
