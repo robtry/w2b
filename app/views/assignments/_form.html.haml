@@ -1,16 +1,28 @@
 = form_for ([@event,@assignment]) do |f|
-	- if @assignment.errors.any?
-		#error_explanation
-			%h2= "#{pluralize(@assignment.errors.count, "error")} prohibited this assignment from being saved:"
-			%ul
-				- @assignment.errors.full_messages.each do |message|
-					%li= message
-
-	.field
-		= f.label :usuario
-		= f.text_field :usuario
-	.field
-		= f.label :cantidad
-		= f.text_field :cantidad
-	.actions
-		= f.submit 'Save'
+	.col.s12
+		- if @assignment.errors.any?
+			.red.lighten-2{style:"padding:10px"}
+				%i.material-icons.left warning
+				%h6= "#{pluralize(@assignment.errors.count, "problema(s)")} ocurrió al guardar el evento"
+			-@assignment.errors.full_messages.each do |message|
+				%script Materialize.toast("#{message}", 5000);
+		.row
+			.input-field.col.s12.m4
+				%i.material-icons.prefix filter_9_plus
+				= f.text_field :cantidad
+				= f.label :cantidad
+			.input-field.col.s12.m8
+				%i.material-icons.prefix account_circle
+				= f.text_field :usuario
+				= f.label :usuario, "Nombre"
+			.input-field.col.s12
+				%a.btn.waves-effect.waves-light.modal-trigger.orange{:href => "#modal4"} Traer item
+				#modal4.modal
+					.modal-content
+						%h4.truncate ¿Esta seguro que desea traer este item?
+						%ul
+							%li *No va a poder editar esta selcción posteriormente
+							%li *No va a poder eliminar esta descisión
+					.modal-footer
+						= f.submit 'Traer', :class=>"btn"
+						%a.modal-action.modal-close.waves-effect.waves-green.btn-flat REGRESAR
