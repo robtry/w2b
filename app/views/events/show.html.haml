@@ -1,6 +1,9 @@
 -u=0
 -@event.items.reverse.each do |i| 
 	-u+=i.numero.to_i
+.fixed-action-btn
+	%a.btn-floating.btn-large.red.modal-trigger.tooltipped{:href => "#modal1", :data=>{:position=>"top", :delay=>"50", :tooltip=>"Crear nuevo evento"}}
+		%i.large.material-icons add
 .container
 	.row
 		%br/
@@ -17,6 +20,8 @@
 			%br/
 			%br/
 			%strong Progreso #{u}%:
+			%br
+			%a.waves-effect.waves-light.btn.modal-trigger{:href => "#modal3"} historial
 			.progress
 				-if u == 0
 					"<div class="indeterminate"></div>"
@@ -26,6 +31,8 @@
 		%br/
 		.col.s12.m6
 			%h5.truncate Traer Item
+			%p *Llene los campos
+			=render "assignments/form"
 		.col.s12.m6
 			%h5.truncate Agregar item:
 			%p *Llene ambos campos
@@ -33,7 +40,7 @@
 			%br/
 			%br/
 		.col.s12.m6.offset-m6
-			%h5.truncate Items:
+			%h5.truncate Items y asignaciones:
 			%ul.collapsible{data:{collapsible:"accordion"}}
 				-@event.items.reverse.each do |i| 
 					%li 

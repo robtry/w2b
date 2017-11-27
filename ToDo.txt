@@ -5,7 +5,7 @@
 #########################
 rails g scaffold Event nombre descripcion:text item:references
 rails g scaffold Item numero descripcion event:references
-rails g scaffold Assignment usuario 
+rails g scaffold Assignment usuario cantidad:integer event:references
 rails g scaffold UsuarioItem item:references assignment:references
 
 rake db:migrate VERSION=0

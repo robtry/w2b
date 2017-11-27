@@ -13,4 +13,5 @@
 class Event < ApplicationRecord
 	validates :nombre, presence: {message: "Campo obligatorio."}
 	has_many :items
+	has_many :assignments
 end

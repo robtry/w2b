@@ -7,6 +7,7 @@ class EventsController < ApplicationController
 
   def show
     @item = Item.new
+    @assignment = Assignment.new
   end
 
 

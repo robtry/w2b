@@ -3,7 +3,7 @@
 # Table name: items
 #
 #  id          :integer          not null, primary key
-#  numero      :string
+#  numero      :integer
 #  descripcion :string
 #  event_id    :integer
 #  created_at  :datetime         not null
