@@ -1,16 +1,19 @@
 = form_for ([@event,@item]) do |f|
-  - if @item.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@item.errors.count, "error")} prohibited this item from being saved:"
-      %ul
-        - @item.errors.full_messages.each do |message|
-          %li= message
-
-  .field
-    = f.label :numero
-    = f.text_field :numero
-  .field
-    = f.label :descripcion
-    = f.text_field :descripcion
-  .actions
-    = f.submit 'Save'
+	.col.s12
+		- if @item.errors.any?
+			.red.lighten-2{style:"padding:10px"}
+				%i.material-icons.left warning
+				%h6= "#{pluralize(@item.errors.count, "problema(s)")} ocurrió al guardar el evento"
+			-@item.errors.full_messages.each do |message|
+				%script Materialize.toast("#{message}", 5000);
+		.row
+			.input-field.col.s12.m4
+				%i.material-icons.prefix pie_chart_outlined
+				= f.text_field :numero
+				= f.label :numero, "Cantidad"
+			.input-field.col.s12.m8
+				%i.material-icons.prefix toc
+				= f.text_field :descripcion
+				= f.label :descripcion
+			.input-field.col.s12
+				= f.submit 'Save'

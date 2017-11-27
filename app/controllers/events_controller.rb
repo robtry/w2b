@@ -18,7 +18,7 @@ class EventsController < ApplicationController
       if @event.save
         format.html { redirect_to @event, notice: 'Evento creado satisfactoriamente' }
       else
-        flash[:error] = 'No se pudo crear el evento'
+        flash[:error] = 'Debe llenar todos los campos del evento'
         format.html {redirect_to root_path}
       end
     end

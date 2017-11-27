@@ -9,9 +9,10 @@ class ItemsController < ApplicationController
 
     respond_to do |format|
       if @item.save
-        format.html { redirect_to @item.event, notice: 'Item was successfully created.' }
+        format.html { redirect_to @item.event, notice: 'Item agregado correctamente' }
       else
-        format.html { render :new }
+        flash[:error] = 'No se pudo agregar, revise los datos'
+        format.html { redirect_to @event}
       end
     end
   end
