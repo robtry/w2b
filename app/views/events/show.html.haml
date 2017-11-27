@@ -6,12 +6,15 @@
 		%i.large.material-icons add
 #modal3.modal.bottom-sheet
 	.modal-content
-		%h4.truncate ¿Esta seguro que desea agregar item?
-		%ul
-			%li *No va a poder editar este item posteriormente
-			%li *No va a poder eliminar este item
-	.modal-footer
-		%a.modal-action.modal-close.waves-effect.waves-green.btn-flat REGRESAR
+		%h4.truncate Historial
+		%ul.collection
+			-@event.assignments.reverse.each do |e| 
+				%li.collection-item.avatar
+					%i.material-icons.circle.green account_box
+					%span.title #{e.usuario.capitalize}
+					%p #{e.cantidad} - que trajo <br/> #{time_ago_in_words(e.created_at)} ago
+					%p.secondary-content
+						%i.material-icons done
 .container
 	.row
 		%br/

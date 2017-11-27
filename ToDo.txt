@@ -1,7 +1,7 @@
 #=> descomentar favicon.ico
 #=> escriber GEO
-#=> cambiar el btn fixed
 #=> validaciones
+#=> revisar modal de historial no se coma todo
 #########################
 rails g scaffold Event nombre descripcion:text item:references
 rails g scaffold Item numero descripcion event:references
