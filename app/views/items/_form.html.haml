@@ -16,4 +16,13 @@
 				= f.text_field :descripcion
 				= f.label :descripcion
 			.input-field.col.s12
-				= f.submit 'Save'
+				%a.btn.waves-effect.waves-light.modal-trigger.orange{:href => "#modal2"} Guardar item
+				#modal2.modal
+					.modal-content
+						%h4.truncate ¿Esta seguro que desea agregar item?
+						%ul
+							%li *No va a poder eliminar este item posteriormente
+							%li *No va a poder eliminar este item
+					.modal-footer
+						= f.submit 'Agregar', :class=>"btn"
+						%a.modal-action.modal-close.waves-effect.waves-green.btn-flat REGRESAR
