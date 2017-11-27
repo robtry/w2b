@@ -4,5 +4,10 @@
 #=> validaciones
 #########################
 rails g scaffold Event nombre descripcion:text item:references
-rails g scaffold Item numero descripcion event:references assignment:references
-rails g scaffold Assignment usuario item:references
+rails g scaffold Item numero descripcion event:references
+rails g scaffold Assignment usuario 
+rails g scaffold UsuarioItem item:references assignment:references
+
+rake db:migrate VERSION=0
+rake db:drop db:create db:migrate
+bundle exec annotate

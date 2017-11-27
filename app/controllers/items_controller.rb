@@ -3,9 +3,9 @@ class ItemsController < ApplicationController
   # POST /items
   def create
     @event = Event.find(params[:event_id])
-
     @item = @event.items.new(item_params)
     @item.event = @event
+
 
     respond_to do |format|
       if @item.save

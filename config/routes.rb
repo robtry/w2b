@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
+  resources :usuario_items
+  resources :assignments
   resources :events, only: [:show,:index,:create] do 
-   resources :assignments
-   resources :items, only: [:create]
+    resources :items, only: [:create]
   end
 
   root 'incio#index'

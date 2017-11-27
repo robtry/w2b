@@ -4,7 +4,7 @@
   %thead
     %tr
       %th Usuario
-      %th Item
+      %th Item user
       %th
       %th
       %th
@@ -13,7 +13,7 @@
     - @assignments.each do |assignment|
       %tr
         %td= assignment.usuario
-        %td= assignment.item
+        %td= assignment.item_user
         %td= link_to 'Show', assignment
         %td= link_to 'Edit', edit_assignment_path(assignment)
         %td= link_to 'Destroy', assignment, method: :delete, data: { confirm: 'Are you sure?' }

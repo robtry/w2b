@@ -38,6 +38,7 @@ gem 'materialize-sass'
 gem 'haml-rails'
 gem 'material_icons'
 gem 'jquery-rails'
+gem 'annotate'
 #===============================================
 
 group :development, :test do
