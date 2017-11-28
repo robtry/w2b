@@ -15,7 +15,12 @@
 				%i.material-icons.prefix account_circle
 				= f.text_field :usuario
 				= f.label :usuario, "Nombre"
+			-@event.items.reverse.each do |i| 
+				.input-field.col.s12
+					= radio_button_tag :item_para_usuario,i.id
+					= label_tag "item_para_usuario_#{i.id}", "#{i.descripcion}"
 			.input-field.col.s12
+				%br
 				%a.btn.waves-effect.waves-light.modal-trigger.green{:href => "#modal4"} Traer item
 				#modal4.modal
 					.modal-content
