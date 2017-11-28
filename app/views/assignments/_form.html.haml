@@ -7,16 +7,16 @@
 			-@assignment.errors.full_messages.each do |message|
 				%script Materialize.toast("#{message}", 5000);
 		.row
-			.input-field.col.s12.m4
+			.input-field.col.s12.l4
 				%i.material-icons.prefix filter_9_plus
 				= f.text_field :cantidad
 				= f.label :cantidad
-			.input-field.col.s12.m8
+			.input-field.col.s12.l8
 				%i.material-icons.prefix account_circle
 				= f.text_field :usuario
 				= f.label :usuario, "Nombre"
 			.input-field.col.s12
-				%a.btn.waves-effect.waves-light.modal-trigger.orange{:href => "#modal4"} Traer item
+				%a.btn.waves-effect.waves-light.modal-trigger.green{:href => "#modal4"} Traer item
 				#modal4.modal
 					.modal-content
 						%h4.truncate ¿Esta seguro que desea traer este item?
