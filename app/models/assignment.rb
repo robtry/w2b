@@ -12,6 +12,7 @@
 
 class Assignment < ApplicationRecord
 	validates :usuario, presence: {message: "Campo obligatorio"}
+	validates :cantidad, presence: {message: "Campo obligatorio"}, numericality: {only_integer: true}
 	#relaciones
 	has_many :usuario_items, dependent: :destroy
 	has_many :items, :through => :usuario_items

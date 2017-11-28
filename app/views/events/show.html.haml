@@ -1,6 +1,14 @@
 -u=0
 -@event.items.reverse.each do |i| 
 	-u+=i.numero.to_i
+-traen=0
+-@event.assignments.each do |i| 
+	-traen+=i.cantidad.to_i
+-unless u==0
+	-porcentaje = (traen*100)/u
+-else
+	-porcentaje=0
+
 .fixed-action-btn
 	%a.btn-floating.btn-large.red.modal-trigger.tooltipped{:href => "#modal1", :data=>{:position=>"top", :delay=>"50", :tooltip=>"Crear nuevo evento"}}
 		%i.large.material-icons add
@@ -12,7 +20,7 @@
 				%li.collection-item.avatar
 					%i.material-icons.circle.green account_box
 					%span.title #{e.usuario.capitalize}
-					%p #{e.cantidad} - que trajo <br/> #{time_ago_in_words(e.created_at)} ago
+					%p va a traer #{e.cantidad} #{e.items.last.descripcion} <br/> #{time_ago_in_words(e.created_at)} ago
 					%p.secondary-content
 						%i.material-icons done
 %br/
@@ -31,14 +39,14 @@
 				%br/
 				%br/
 				%br/
-				%strong Progreso #{u}%:
+				%strong Progreso #{porcentaje}%:
 				%br
 				%a.modal-trigger{:href => "#modal3"}  Ver historial
 				.progress
-					-if u == 0
+					-if porcentaje == 0
 						"<div class="indeterminate"></div>"
 					-else
-						"<div class="determinate" style="width: #{u}%"></div>".html_safe
+						"<div class="determinate" style="width: #{porcentaje}%"></div>".html_safe
 		-#.col.l1
 		.col.s12.m6.card-panel.hovereable
 			%h5.truncate Agregar item:
@@ -54,11 +62,12 @@
 			%h5.truncate Items y asignaciones:
 			%ul.collapsible{data:{collapsible:"accordion"}}
 				-@event.items.reverse.each do |i| 
-					%li 
-						.collapsible-header
-							=i.descripcion
-							%span.badge 
-								faltan: #{i.numero}
-						.collapsible-body
-							%p 
-								aqui va quien
+					-if i.numero != 0
+						%li 
+							.collapsible-header
+								=i.descripcion
+								%span.badge 
+									faltan: #{i.numero}
+							.collapsible-body
+								%p 
+									aqui va quien
