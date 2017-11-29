@@ -39,6 +39,7 @@ gem 'haml-rails'
 gem 'material_icons'
 gem 'jquery-rails'
 gem 'annotate'
+gem 'pg'
 #===============================================
 
 group :development, :test do
