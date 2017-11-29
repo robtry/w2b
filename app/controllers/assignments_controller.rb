@@ -2,15 +2,15 @@ class AssignmentsController < ApplicationController
   def create
     #raise @assignment
     @event = Event.find(params[:event_id])
-    @item =Item.find(params[:itemusuario])
     @assignment = @event.assignments.new(assignment_params)
     @assignment.event = @event
 
     if params[:itemusuario] != nil # si no selecciono nada
+      @item =Item.find(params[:itemusuario])
+      @assignment.item_id = params[:itemusuario]
       if @assignment.cantidad <= @item.numero #si trae mas de lo que se pide
           respond_to do |format|
             if @assignment.save
-              UsuarioItem.create(item_id:params[:itemusuario], assignment_id: @assignment.id)
               if (@item.numero-@assignment.cantidad) == 0
                 @item.update(completado: true)
                 flash[:error] = "#{@item.descripcion} se completo"

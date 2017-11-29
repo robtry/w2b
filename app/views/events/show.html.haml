@@ -20,7 +20,7 @@
 				%li.collection-item.avatar
 					%i.material-icons.circle.green account_box
 					%span.title #{e.usuario.capitalize}
-					%p va a traer #{e.cantidad} #{e.items.last.descripcion} <br/> #{time_ago_in_words(e.created_at)} ago
+					%p va a traer #{e.cantidad} #{e.item.descripcion} <br/> #{time_ago_in_words(e.created_at)} ago
 					%p.secondary-content
 						%i.material-icons done
 %br/
@@ -67,9 +67,20 @@
 							=i.descripcion
 							%span.badge
 								-if i.numero != 0
-									faltan: #{i.numero}
+									faltan: #{i.numero} de #{i.numero_original}
 								-else
 									completado
 						.collapsible-body
-							%p 
-								aqui va quien
+							%p
+								-if i.assignments.size !=0
+									-if i.completado
+										Listo quedó asi:
+									-else
+										Hasta ahora:
+									%br/
+									-i.assignments.each do |as| 
+										%b #{as.usuario}:
+										#{as.cantidad}
+										%br/
+								-else
+									Aún nadie se ha solidarizado 
