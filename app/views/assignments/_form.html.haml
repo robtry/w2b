@@ -14,10 +14,10 @@
 			.input-field.col.s12.l8
 				%i.material-icons.prefix account_circle
 				= f.text_field :usuario
-				= f.label :usuario, "Nombre"
+				= f.label :usuario, "Nombre de quien trae"
 			%h5 Disponibles: 
 			-@event.items.reverse.each do |it|
-				-if i.numero != 0
+				-if it.numero != 0
 					= radio_button_tag :itemusuario,it.id
 					= label_tag "itemusuario_#{it.id}", it.descripcion
 					&nbsp;&nbsp;&nbsp;&nbsp;

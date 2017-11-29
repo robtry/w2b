@@ -32,7 +32,9 @@ ActiveRecord::Schema.define(version: 20171127143041) do
 
   create_table "items", force: :cascade do |t|
     t.integer "numero"
+    t.integer "numero_original"
     t.string "descripcion"
+    t.boolean "completado", default: false
     t.integer "event_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

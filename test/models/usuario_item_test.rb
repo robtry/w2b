@@ -3,6 +3,7 @@
 # Table name: usuario_items
 #
 #  id            :integer          not null, primary key
+#  cantidad      :integer
 #  item_id       :integer
 #  assignment_id :integer
 #  created_at    :datetime         not null

@@ -2,12 +2,14 @@
 #
 # Table name: items
 #
-#  id          :integer          not null, primary key
-#  numero      :integer
-#  descripcion :string
-#  event_id    :integer
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
+#  id              :integer          not null, primary key
+#  numero          :integer
+#  numero_original :integer
+#  descripcion     :string
+#  completado      :boolean          default(FALSE)
+#  event_id        :integer
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

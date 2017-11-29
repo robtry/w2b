@@ -1,10 +1,10 @@
 -u=0
 -@event.items.reverse.each do |i| 
-	-u+=i.numero.to_i
+	-u+=i.numero_original.to_i
 -traen=0
 -@event.assignments.each do |i| 
 	-traen+=i.cantidad.to_i
--unless u==0
+-if u != 0
 	-porcentaje = (traen*100)/u
 -else
 	-porcentaje=0
@@ -62,12 +62,14 @@
 			%h5.truncate Items y asignaciones:
 			%ul.collapsible{data:{collapsible:"accordion"}}
 				-@event.items.reverse.each do |i| 
-					-if i.numero != 0
-						%li 
-							.collapsible-header
-								=i.descripcion
-								%span.badge 
+					%li 
+						.collapsible-header
+							=i.descripcion
+							%span.badge
+								-if i.numero != 0
 									faltan: #{i.numero}
-							.collapsible-body
-								%p 
-									aqui va quien
+								-else
+									completado
+						.collapsible-body
+							%p 
+								aqui va quien
