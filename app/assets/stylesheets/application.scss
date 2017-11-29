@@ -20,3 +20,13 @@ footer{
 		font-size: inherit;
 	}
 }
+
+@media screen and (max-width: 600px) {
+    .show-on-small-only {
+        display: block !important;
+    }
+}
+
+.show-on-small-only{
+	display: none;
+}

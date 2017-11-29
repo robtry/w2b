@@ -1,12 +1,8 @@
-#=> descomentar favicon.ico
 #=> escriber GEO
-#=> validaciones
-#=> revisar modal de historial no se coma todo
 #########################
-rails g scaffold Event nombre descripcion:text item:references
+rails g scaffold Event nombre descripcion:text
 rails g scaffold Item numero:integer numero_original:integer descripcion completado:boolean event:references
-rails g scaffold Assignment usuario event:references
-rails g scaffold UsuarioItem item:references assignment:references cantidad:integer
+rails g scaffold Assignment usuario event:references item:references
 
 rake db:migrate VERSION=0
 rake db:drop db:create db:migrate

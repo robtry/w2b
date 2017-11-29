@@ -2,7 +2,10 @@
 	.container
 		%br/
 		%br/
-		%h1.header.center.orange-text What 2 Bring
+		
+		%h1.header.center.orange-text.show-on-small-only What 2 Bring
+		.center.hide-on-small-only
+			=image_tag("logo.jpeg",height: '300px',width:'auto')
 		.row.center
 			%ul
 				%li 

@@ -3,7 +3,7 @@
 	%head
 		%meta{name:"viewport", content:"width=device-width, initial-scale=1"}
 		%meta{charset:"UTF-8"}
-		-#= favicon_link_tag 'favicon.ico'
+		= favicon_link_tag 'favicon.ico'
 		= csrf_meta_tags		
 		= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track': 'reload'
 		= javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
@@ -13,6 +13,7 @@
 		%nav.light-blue.lighten-1{:role=>"navigation"}
 			.nav-wrapper.container
 				=link_to("W2B", root_path, :class=>"brand-logo")
+				-#=image_tag("logo.png",height: '50px')
 				%ul.right.hide-on-med-and-down
 					%li
 						-#=link_to("Nuevo evento <i class=\"material-icons right\"> add </i>".html_safe,new_event_path)

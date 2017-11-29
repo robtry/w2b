@@ -48,13 +48,13 @@
 					-else
 						"<div class="determinate" style="width: #{porcentaje}%"></div>".html_safe
 		-#.col.l1
-		.col.s12.m6.card-panel.hovereable
+		.col.s12.m6.card-panel.hoverable
 			%h5.truncate Agregar item:
 			%blockquote *Llene ambos campos
 			=render "items/form"
 			%br/
 			%br/
-		.col.s12.m6.card-panel.hovereable
+		.col.s12.m6.card-panel.hoverable
 			%h5.truncate Traer Item
 			%blockquote *Seleccione algun item y llene los campos
 			=render "assignments/form"
