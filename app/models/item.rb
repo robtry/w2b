@@ -18,7 +18,7 @@ class Item < ApplicationRecord
 	validates :descripcion, presence: {message: "Campo obligatorio"}
 	#relaciones
 	belongs_to :event
-	has_many :assignments
+	has_many :assignments, dependent: :destroy
 	#has_many :usuario_items, dependent: :destroy
 	#has_many :assignments, :through => :usuario_items
 end
